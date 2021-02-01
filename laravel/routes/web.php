@@ -2,17 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PeripheralController@index') -> name('peripheral-index');   //visualizzo tutte le peripherals
+
+Route::get('/peripheral{id}', 'PeripheralController@show') -> name('peripheral-show');  //visualizzo la singola peripheral
+
+Route::get('/new/peripheral', 'PeripheralController@create') -> name('peripheral-create');  //visualizzo la pagina col form
+
+Route::post('/new/peripheral/store', 'PeripheralController@store') -> name('peripheral-store');    //acquisisco le informazioni del form
