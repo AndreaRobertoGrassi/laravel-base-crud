@@ -8,12 +8,12 @@ use App\Peripheral;
 class PeripheralController extends Controller
 {
   public function index() {        //visualizzo tutte le peripherals
-    $peripherals = Peripheral::all();
+    $peripherals = Peripheral::all();    //assegno alla variabile $peripherals tutta la tabella (posso anche scrivere: $peripherals = App\Peripheral::all(); togliendo use App\Peripheral; )
     return view('pages.peripherals', compact('peripherals'));
   }
 
   public function show($id) {      //visualizzo la singola peripheral
-    $peripheral = Peripheral::findOrFail($id);
+    $peripheral = Peripheral::findOrFail($id);    //cerco l'elemento con questo specifico id, se non trovato da errore
     return view('pages.peripheral', compact('peripheral'));
   }
 
@@ -35,6 +35,6 @@ class PeripheralController extends Controller
     // $newPeripheral -> consumption =$request ->get('consumption');
     //
     // $newPeripheral -> save();
-
+    // return redirect() -> route('peripheral-index');
    }
 }

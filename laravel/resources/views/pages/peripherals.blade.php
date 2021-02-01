@@ -6,7 +6,7 @@
         @foreach ($peripherals as $peripheral)
             <li>
                 <a href="{{ route('peripheral-show', $peripheral -> id) }}">      {{--punto alla singola peripheral--}}
-                    {{ $peripheral -> name }}
+                    {{ $peripheral -> name }}      {{--si usa invece $peripheral['name'] negli array associativi dove la chiave, ad esempio name, è una stringa--}}
                 </a>
             </li>
         @endforeach

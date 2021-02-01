@@ -2,7 +2,7 @@
 
 @section('content')
   <h1>Add new Peripheral</h1>
-  <form class="" action="{{route('peripheral-store')}}" method="POST">  {{--punta alla peripheral-store per salvare i dati inseriti--}}
+  <form action="{{route('peripheral-store')}}" method="POST">  {{--punta alla peripheral-store per salvare i dati inseriti--}}
     @csrf     {{--per la sicurezza--}}
     @method('POST')   {{--post di laravel--}}
 
