@@ -23,8 +23,8 @@ class PeripheralController extends Controller
 
   public function store(Request $request) {       //acquisisco le informazioni del form
     //VERS 1:
-    Peripheral::create($request -> all());
-    return redirect() -> route('peripheral-index');
+    $newperip=Peripheral::create($request -> all());
+    return redirect() -> route('peripheral-show', $newperip -> id);   //visualizzo il nuovo elemento creato
 
     // VERS 2:
     // $newPeripheral=new Peripheral;
